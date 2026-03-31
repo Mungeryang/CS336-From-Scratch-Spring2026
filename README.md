@@ -1,4 +1,4 @@
-# <p align="center"> 🚀🚀 CS336-From-Scratch 🚀🚀 </p>
+# <p align="center"> 🚀🚀 CS336-From-Scratch Spring 2026🚀🚀 </p>
 
 > The NoteBook and Assignments implemention via Learning CS336 Spring 2026！
 
