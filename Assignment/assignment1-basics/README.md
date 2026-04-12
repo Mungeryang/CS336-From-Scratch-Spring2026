@@ -30,6 +30,16 @@ Initially, all tests should fail with `NotImplementedError`s.
 To connect your implementation to the tests, complete the
 functions in [./tests/adapters.py](./tests/adapters.py).
 
+## 代码库架构
+
+1. cs336_basics/*: 存放我们自己手撸的全部代码，可以在这个文件夹下开始任何的创造
+
+2. adapters.py: 测试时的统一的接口层，将我们自己实现的代码 `cs336_basics/*` 与 test/ 测试代码做桥接
+
+3. test_*.py: 必须通过的全部测试文件
+
+## 数据集
+
 ### Download data
 Download the TinyStories data and a subsample of OpenWebText
 
@@ -47,6 +57,12 @@ gunzip owt_valid.txt.gz
 
 cd ..
 ```
+ 
+## BPE Tokenizer Training
+
+### Vocabulary initialization
+
+分词器词汇表是从 字节串token 到整数ID的一对一映射。由于我们正在训练一个字节级BPE分词器，初始词汇表就是所有字节的集合。由于存在256种可能的字节值，我们的初始词汇表大小为256。
 
 
 ## ✨ What You Build In Assignment 1
