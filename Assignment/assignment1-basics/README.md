@@ -65,6 +65,8 @@ cd ..
 分词器词汇表是从 字节串token 到整数ID的一对一映射。由于我们正在训练一个字节级BPE分词器，初始词汇表就是所有字节的集合。由于存在256种可能的字节值，我们的初始词汇表大小为256。
 
 
+### 预分词
+
 ## ✨ What You Build In Assignment 1
 
 This assignment asks you to build a small language-modeling stack from scratch:
