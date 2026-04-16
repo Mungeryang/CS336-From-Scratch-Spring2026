@@ -8,7 +8,7 @@ dependencies = [
     "einops>=0.8.1", # tensor operations
     "einx>=0.3.0", # more general tensor operations
     "jaxtyping>=0.3.0", # type hints for pytorch/jax/numpy
-    "numpy",
+    "numpy==1.26.4",
     "psutil>=6.1.1",
     "pytest>=8.3.4",
     "regex>=2024.11.6", # more powerful regex than the builtin `re` module
