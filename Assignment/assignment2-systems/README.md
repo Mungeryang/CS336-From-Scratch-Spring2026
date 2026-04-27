@@ -1,4 +1,4 @@
-# CS336 Spring 2025 Assignment 2: Systems
+# CS336 Spring 2026 Assignment 2: Systems
 
 For a full description of the assignment, see the assignment handout at
 [cs336_spring2025_assignment2_systems.pdf](./cs336_spring2025_assignment2_systems.pdf)
@@ -56,6 +56,33 @@ Python 3.12.10 (main, Apr  9 2025, 04:03:51) [Clang 20.1.0 ] on linux
 ```
 
 `uv run` installs dependencies automatically as dictated in the `pyproject.toml` file.
+
+List the key packages as follow:
+
+```sh
+(cs336) [ygm@localhost CS336-From-Scratch]$ pip list
+Package                   Version
+------------------------- ------------
+einops                    0.8.2
+jaxtyping                 0.3.9
+numpy                     1.26.4
+pandas                    2.3.2
+pandocfilters             1.5.1
+pillow                    12.2.0
+pip                       26.0.1
+pytest                    9.0.3
+pyzmq                     26.4.0
+regex                     2026.4.4
+tiktoken                  0.11.0
+torch                     2.6.0
+tqdm                      4.67.3
+utils                     1.0.2
+uv                        0.11.7
+uv-build                  0.8.4
+wandb                     0.23.0
+websocket-client          1.9.0
+wheel                     0.46.3
+```
 
 ## Submitting
 
