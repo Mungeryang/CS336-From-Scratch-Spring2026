@@ -28,6 +28,11 @@ byte-level BPE 的核心优势可以概括为**兼顾了开放词表能力和较
 
 - 如果只按字节切分，序列会很长，训练和推理成本高。BPE 会把高频字节序列继续合并成子词，从而压缩序列长度，减少计算开销。
 
+### BPE训练过层中,预分词(Pre-tokenization)的作用是什么？
+
+- 防止跨界合并，避免将本应该属于不用语义单元的片段合并成一个独立的ID，提高语义一致性。
+
+- 通过正则表达式先将文本切分成单词或者短语块，可以在统计字节对频率时减少全量扫描语料的次数。
 
 
 ## Topic 2: Model Architecture
@@ -46,6 +51,11 @@ $$ \mathrm{LayerNorm}(x) = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} \odot \gam
 $$ \mathrm{RMS}(x) = \sqrt{\frac{1}{d}\sum_{i=1}^{d} x_i^2 + \epsilon} $$
 
 > LayerNorm 是“减均值再缩放”，而 RMSNorm 是“只按均方根缩放、不减均值”；后者更简单、更省计算。
+
+
+### Pre-norm 与 Post-norm 的区别，为什么现代 LLM 偏好Pre-norm 架构？
+
+
 
 
 ### 使用Transformer生成文本时,在解码过程中使用的Trick有哪些?
