@@ -50,12 +50,7 @@ $$ \mathrm{LayerNorm}(x) = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} \odot \gam
 
 $$ \mathrm{RMS}(x) = \sqrt{\frac{1}{d}\sum_{i=1}^{d} x_i^2 + \epsilon} $$
 
-> LayerNorm 是“减均值再缩放”，而 RMSNorm 是“只按均方根缩放、不减均值”；后者更简单、更省计算。
-
-
-### Pre-norm 与 Post-norm 的区别，为什么现代 LLM 偏好Pre-norm 架构？
-
-
+> LayerNorm 是“减均值再缩放”，而 RMSNorm 是“只按均方根缩放、不减均值”；后者更简单、更省计算(计算开销更小)。
 
 
 ### 使用Transformer生成文本时,在解码过程中使用的Trick有哪些?
@@ -72,6 +67,24 @@ $$ \mathrm{softmax}(v, \tau)_i = \frac{\exp(v_i / \tau)}{\sum_{j=1}^{|\mathrm{vo
 不直接在整个词表上采样，而是先把所有 token 按概率从大到小排序，从概率最大的 token 开始往后累加，一直加到累计概率第一次达到或超过阈值 p。
 
 然后只在这组 token 里重新归一化并采样，截断低概率噪声 token，提升生成文本质量。
+
+
+### Pre-norm 与 Post-norm 的区别，为什么现代 LLM 偏好Pre-norm 架构？
+
+<img src="https://i-blog.csdnimg.cn/blog_migrate/d4d8a8327721f8368e1bce5f0a1b2096.png">
+
+Transformer Block 包括两个主要的sub-layers: multi-head self-attn mechanism(MHA) 和 position-wise feed-forward netword(FFN)。
+
+结构区别：Post-norm 在残差连接相加后进行 LayerNorm；Pre-norm 则是在进入自注意力或前馈网络之前进行 LayerNorm 。(区别如上图所示，重点抓住两个核心层即可)
+
+Pre-norm 创造了一条从输入嵌入到最终输出的“清晰残差流”，实验证明它能显著提高大模型训练的稳定性，改善梯度流动 。
+
+
+
+
+
+
+
 
 
 
