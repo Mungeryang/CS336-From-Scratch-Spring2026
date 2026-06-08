@@ -37,6 +37,15 @@ byte-level BPE 的核心优势可以概括为**兼顾了开放词表能力和较
 
 ## Topic 2: Fundamentals
 
+### 字节与比特
+
+`bytes()` 返回一个不可变的字节对象。  
+
+计算机内部其实并不认识“你”或“好”这些汉字，它只认识 0 和 1。`bytes()` 方法就像是一个翻译官，它根据你提供的编码表（如 utf-8），把人类可读的文本转换为机器存储的字节序列。  
+
+在 utf-8 编码中，一个常用的汉字通常占用 3 个字节。当你执行 bytes("你好", encoding='utf-8') 时，得到的返回结果是： b'\xe4\xbd\xa0\xe5\xa5\xbd'
+
+
 ### 残差的作用是什么？
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3osQSRVUQ8k0JqVMNFi_w4xKrk1CUn5PfbQ&s">
@@ -121,6 +130,8 @@ $$ \mathcal{L}_{\text{KL}} = D_{\text{KL}}(\pi_\theta \parallel \pi_{\text{ref}}
 本质：防止模型在优化过程中偏离原始预训练分布太远，避免"reward hacking"
 
 ### 模型参数量是怎么估算的？
+
+### 注意力机制通俗理解
 
 
 
