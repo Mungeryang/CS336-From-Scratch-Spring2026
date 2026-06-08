@@ -136,6 +136,19 @@ LLaVA中 Stage1 的对齐机制属于微调一个简单的线性层，使得视�
 ## Topic 3: Model Architecture
 
 
+### 简述大模型发展历程
+
+- 前神经网络时代：N-gram模型，用于测量英语熵值
+
+- 神经组件期 (2010s)：神经语言模型、Seq2Seq、Attention、Transformer、Adam优化器、MoE、模型并行
+
+- 早期基座模型：ELMo, BERT, T5
+
+- 规模化与闭源：GPT-2/3, PaLM, Chinchilla (Compute-optimal scaling)
+
+开源浪潮：The Pile, GPT-J, OPT, BLOOM, Llama系列, Qwen, DeepSeek, OLMo
+
+
 ### Qwen架构中的使用的层归一化函数是什么？其和 *LayerNorm* 的区别体现在哪些方面?
 
 Qwen架构中使用的层归一化函数为`RMSNorm`, 相比原始 Transformer 常用的 `LayerNorm`，现代大模型更常采用 `RMSNorm`。
