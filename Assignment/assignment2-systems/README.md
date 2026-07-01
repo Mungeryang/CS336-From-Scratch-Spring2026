@@ -84,6 +84,8 @@ websocket-client          1.9.0
 wheel                     0.46.3
 ```
 
+## Flash Attention
+
 ## Submitting
 
 To submit, run `./test_and_make_submission.sh` . This script will install your
