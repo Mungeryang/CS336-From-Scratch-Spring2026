@@ -27,7 +27,15 @@ Class HomePage：https://cs336.stanford.edu/
 
 P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50问。问题与作答全部开源，欢迎任何感兴趣的人fork更新～ 👏👏👏
 
+## HandonLLM
 
+新增HandonLLM部分，收录了我本人微调LLM的实验全过程和心得体会，希望能给后续入坑大模型的 LLMer 们以启发，主要面向科研创新方向，和大家一起探索共同学习！
+
+计划PR:
+
+- LoRA-SFT: 基于LoRA的Llama-7B模型的微调训练
+
+- DPO-SFT: 基于RL的视觉语言模型微调训练
 
 ## 💻 Assignments
 
