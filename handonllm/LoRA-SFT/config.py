@@ -86,6 +86,8 @@ def nshot_chats(nshot_data: list, n: int, question: str, answer: any, mode: str)
 
 gsm8k_train = load_jsonlines('/home/ygm/gsm8k_train.jsonl')
 
+# 原始的GSM8K数据集是 QA 格式
+# formatted_gsm8k 是将 QA 格式 转换为 few-shot 格式
 formatted_gsm8k = []
 TRAIN_N_SHOT = 1 # TODO: Give model more examples
 max_token_len = 0 # Record token length of dataset and prevent data from truncation
