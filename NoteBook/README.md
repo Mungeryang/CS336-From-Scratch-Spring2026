@@ -242,6 +242,72 @@ LLaVA主要采用两阶段训练策略：*Stage1: 对齐预训练 +  Stage2: 指
 
 > Qwen3-VL、InternVL、DeepSeek-VL 等模型虽然架构上复杂，但是**数据生成范式**和**两阶段训练策略**(对齐预训练 + 指令微调)全部源自LLaVA。
 
+## transformers 与 peft 梳理
+
+### transformers 中不同模型加载类的区别是什么？
+
+> AutoModel 加载“裸模型backbone”, AutoModelForxxx 加载“backbone + 某个任务头”。
+
+```python
+model = AutoModel.from_pretrained("bert-base-cased") # 只要隐藏状态，自己接head
+
+model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-7B") # decoder-only 大模型微调：LLaMA/Qwen/GPT 类
+
+
+model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base") # encoder-decoder 文本生成：T5/BART/MT5
+
+```
+
+- `AutoModel` 不会自动算任务 loss，它不知道具体的任务是什么。
+
+- `AutoModelForCausalLM` 的 labels 通常是目标token序列，用下一个token预测训练。
+
+- `AutoModelForSeq2SeqLM` 的 labels 是 decoder 目标序列，比如摘要或翻译结果。
+
+做大模型 SFT/LoRA 微调，绝大多数 decoder-only 模型用 AutoModelForCausalLM；T5/BART 这类 encoder-decoder 才用 AutoModelForSeq2SeqLM。
+
+> 加载 视觉语言模型 与加载 语言模型 的区别？
+
+视觉语言模型的输入不止有文本token，还有图片/视频/音频经过预处理后的视觉tokens，以及图像token和文本token对齐的信息。transformers 库中AutoTokenizer 只负责文本，AutoProcessor 负责“文本 + 图片 + 视频”的整体打包。
+
+以Qwen3-VL为例，官方Qwen3VLProcessor本质包装了：
+
+- tokenizer: 处理文本
+
+- image_processor: 处理图片resize、normalize、patch
+
+- video_processor: 处理视频帧、时序信息
+
+- chat_template: 多模态message转化为输入格式
+
+### from_pretrained()方法中的关键参数有哪些？
+
+`AutoModel.from_pretrained()` 的核心作用是：根据模型目录或 Hub 上的 **config.json** 自动判断架构，然后加载对应模型权重。
+
+| 参数                          | 作用                          | 实战中怎么用                                                 |
+| :---------------------------- | :---------------------------- | :----------------------------------------------------------- |
+| pretrained_model_name_or_path | 模型来源                      | Hub 模型名，如 "bert-base-chinese"；或**本地路径** |
+| dtype / torch_dtype           | 加载权重的数据类型            | 大模型常用 torch.float16、torch.bfloat16 或 "auto"           |
+| device_map                    | 自动/手动分配设备             | 大模型常用 device_map="auto"                                 |
+| attn_implementation           | 注意力实现                    | 可选 "eager"、"sdpa"、"flash_attention_2"                 |
+| config                        | 指定模型配置                  | 想手动改结构、标签数、输出行为时用                           |
+| local_files_only              | 只读本地缓存，不联网          | 离线环境常用                                                 |
+| trust_remote_code             | 是否执行模型仓库自定义代码    | Qwen、ChatGLM、部分多模态模型可能需要；只对可信仓库开启      |
+
+
+- from_pretrained() 默认会把模型设成 eval() 模式；训练时需要进入 train()，不过 Trainer 通常会处理。
+
+- 大模型加载最常用组合是：dtype/torch_dtype + device_map + quantization_config + trust_remote_code。
+
+### peft 微调流程
+
+> 基本流程: transformers 加载模型backbone -> 创建LoRAConfig -> 调用get_peft_model() 包装成 PeftModel() 训练
+
+
+
+
+
+
 
 
 
