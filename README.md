@@ -100,11 +100,12 @@ P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50�
 
 <a href="https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left" />
  </picture>
 </a>
+
 
 
 
