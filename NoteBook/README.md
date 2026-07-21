@@ -303,6 +303,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base") # encoder-d
 
 > 基本流程: transformers 加载模型backbone -> 创建LoRAConfig -> 调用get_peft_model() 包装成 PeftModel() 训练
 
+### DPO微调训练
 
 
 
