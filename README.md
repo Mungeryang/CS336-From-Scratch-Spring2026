@@ -98,8 +98,15 @@ P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50�
 
 ## ⭐️ Star History
 
+## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&legend=top-left&sealed_token=pWJzYYu0H2es3e-1SW9ueuo7HzGobwEFKB7pVQi9rknFFtl5QIIw0Wf4Fsc01kFWbJkTrvAQMY0KOMNkRhPNsgxSkurYfatLhWdYb-VSV71DH6jyG81v1Q)](https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left)
+<a href="https://www.star-history.com/?repos=Mungeryang%2FCS336-From-Scratch-Spring2026&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&theme=dark&legend=top-left&sealed_token=pWJzYYu0H2es3e-1SW9ueuo7HzGobwEFKB7pVQi9rknFFtl5QIIw0Wf4Fsc01kFWbJkTrvAQMY0KOMNkRhPNsgxSkurYfatLhWdYb-VSV71DH6jyG81v1Q" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&legend=top-left&sealed_token=pWJzYYu0H2es3e-1SW9ueuo7HzGobwEFKB7pVQi9rknFFtl5QIIw0Wf4Fsc01kFWbJkTrvAQMY0KOMNkRhPNsgxSkurYfatLhWdYb-VSV71DH6jyG81v1Q" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Mungeryang/CS336-From-Scratch-Spring2026&type=date&legend=top-left&sealed_token=pWJzYYu0H2es3e-1SW9ueuo7HzGobwEFKB7pVQi9rknFFtl5QIIw0Wf4Fsc01kFWbJkTrvAQMY0KOMNkRhPNsgxSkurYfatLhWdYb-VSV71DH6jyG81v1Q" />
+ </picture>
+</a>
 
 
 
