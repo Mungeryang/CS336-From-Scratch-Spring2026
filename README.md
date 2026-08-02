@@ -37,6 +37,8 @@ P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50�
 
 - DPO-SFT: 基于RL的视觉语言模型微调训练
 
+- Tool-Use: 基于Unsloth和LlamaFactory的使用手册
+
 ## 💻 Assignments
 
 ### Assignment 1: Basics
