@@ -41,6 +41,12 @@ P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50�
 
 ## 💻 Assignments
 
+1. Mechanics: How things work(Transformer、model parallelism work)
+
+2. Mindset: squeezing the most out of the hardware, taking scaling seriously
+
+3. Intuitions: which data and modeling decisions yield good accurancy
+
 ### Assignment 1: Basics
 
 - Implement all of the components (tokenizer, model architecture, optimizer) necessary to train a standard Transformer language model
