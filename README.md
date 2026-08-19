@@ -39,6 +39,8 @@ P.S. 由于精力和能力有限，仅整理出我本人认为较为经典的50�
 
 ## 💻 Assignments
 
+课程收获:
+
 1. Mechanics: How things work(Transformer、model parallelism work)
 
 2. Mindset: squeezing the most out of the hardware, taking scaling seriously
